@@ -6,6 +6,12 @@ namespace GuessRandomNumber
     {
         static void Main(string[] args)
         {
+            NumberGenrated();
+
+        }
+
+        private static void NumberGenrated()
+        {
             int geheim = 0;
             int guess = 0;
             geheim = GuessNumber();
@@ -32,7 +38,6 @@ namespace GuessRandomNumber
                     Console.WriteLine("Sie haben noch " + anzhalVersuche + " weitere Versuche übrig!");
                 }
             }
-
         }
 
         private static int GuessNumber()
