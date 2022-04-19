@@ -6,13 +6,17 @@ namespace GuessRandomNumber
     {
         static void Main(string[] args)
         {
+            NumberGenrated();
+
+        }
+
+        private static void NumberGenrated()
+        {
             int geheim = 0;
             int guess = 0;
+            geheim = GuessNumber();
 
-            Console.WriteLine("Bitte die Geheime Zahl eingeben: ");
-            geheim = Convert.ToInt32(Console.Read());
-
-            for (int anzhalVersuche = 11 ; anzhalVersuche >= 0 ; anzhalVersuche--)
+            for (int anzhalVersuche = 11; anzhalVersuche >= 0; anzhalVersuche--)
             {
                 Console.WriteLine("Wie groß denken Sie ist meine Zahl?");
                 guess = Convert.ToInt32(Console.ReadLine());
@@ -20,13 +24,13 @@ namespace GuessRandomNumber
                 if (geheim == guess)
                 {
                     Console.WriteLine("Richtig! Sie haben gewonnen!");
-                    Console.WriteLine("Sie haben "+ anzhalVersuche+ " Versuche benötigt um meine Zahl zu erraten");
+                    Console.WriteLine("Sie haben " + anzhalVersuche + " Versuche benötigt um meine Zahl zu erraten");
                     Console.ReadLine();
                 }
                 if (geheim > guess)
                 {
                     Console.WriteLine("Nein. meine Zahl ist größer als die von Ihnen getippte");
-                    Console.WriteLine("Sie haben noch "+anzhalVersuche+" weitere Versuche übrig!");
+                    Console.WriteLine("Sie haben noch " + anzhalVersuche + " weitere Versuche übrig!");
                 }
                 else
                 {
@@ -34,7 +38,14 @@ namespace GuessRandomNumber
                     Console.WriteLine("Sie haben noch " + anzhalVersuche + " weitere Versuche übrig!");
                 }
             }
-            
+        }
+
+        private static int GuessNumber()
+        {
+            int geheim;
+            Console.WriteLine("Bitte die Geheime Zahl eingeben: ");
+            geheim = Convert.ToInt32(Console.Read());
+            return geheim;
         }
     }
 }
